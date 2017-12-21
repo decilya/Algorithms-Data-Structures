@@ -70,8 +70,7 @@ public class Main {
      * @return integer
      */
     private static int binarySearch(int searchNumber, int[] arr) {
-
-
+        
         int l = 0;
         int r = arr.length - 1;
         int m;
