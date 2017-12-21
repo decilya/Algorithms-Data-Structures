@@ -6,6 +6,12 @@ import java.util.Arrays;
 
 public class Main {
 
+    /**
+     * Сортировка методом пузырька
+     *
+     * @param arr integer[]
+     * @return integer
+     */
     private static int countBubbleSort(int[] arr) {
 
         int tmp;
@@ -26,6 +32,13 @@ public class Main {
     }
 
 
+    /**
+     *
+     * Оптимизированная сортировка методом пузырька
+     *
+     * @param arr integer[]
+     * @return integer
+     */
     private static int fixCountBubbleSort(int[] arr) {
 
         int tmp;
@@ -49,6 +62,13 @@ public class Main {
         return count;
     }
 
+    /**
+     * Бинарный поиск
+     *
+     * @param searchNumber integer
+     * @param arr integer[]
+     * @return integer
+     */
     private static int binarySearch(int searchNumber, int[] arr) {
 
 
