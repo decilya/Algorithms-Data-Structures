@@ -33,7 +33,6 @@ public class Main {
 
 
     /**
-     *
      * Оптимизированная сортировка методом пузырька
      *
      * @param arr integer[]
@@ -56,7 +55,6 @@ public class Main {
                     f = true;
                 }
             }
-
         }
 
         return count;
@@ -66,11 +64,11 @@ public class Main {
      * Бинарный поиск
      *
      * @param searchNumber integer
-     * @param arr integer[]
+     * @param arr          integer[]
      * @return integer
      */
     private static int binarySearch(int searchNumber, int[] arr) {
-        
+
         int l = 0;
         int r = arr.length - 1;
         int m;
@@ -97,9 +95,27 @@ public class Main {
 
             }
         }
-
     }
 
+    private static int shakerSort(int[] arr){
+        int count = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (i % 2 == 0){
+                // на четных итерациях идем справа налево
+
+
+            } else {
+                // на нечетных идем слева направо
+
+            }
+
+        }
+
+
+        return count;
+    }
 
     public static void main(String[] args) {
 
@@ -120,6 +136,12 @@ public class Main {
             Функция возвращает индекс найденного элемента или -1, если элемент не найден.
         */
         System.out.println(binarySearch(82, arr));
+
+        /*
+        2. *Реализовать шейкерную сортировку.
+         */
+
+
 
 
 
