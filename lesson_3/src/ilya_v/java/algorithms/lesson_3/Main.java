@@ -49,6 +49,38 @@ public class Main {
         return count;
     }
 
+    private static int binarySearch(int searchNumber, int[] arr) {
+
+
+        int l = 0;
+        int r = arr.length - 1;
+        int m;
+
+        while (true) {
+
+            m = l + ((r - l) / 2);
+
+            if ((l <= r) && (arr[m] != searchNumber)) {
+
+                if (arr[m] < searchNumber) {
+                    l = m + 1;
+                } else {
+                    r = m - 1;
+                }
+
+            } else {
+
+                if (arr[m] == searchNumber) {
+                    return m;
+                } else {
+                    return -1;
+                }
+
+            }
+        }
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -68,6 +100,9 @@ public class Main {
         3.  Реализовать бинарный алгоритм поиска в виде функции, которой передается отсортированный массив.
             Функция возвращает индекс найденного элемента или -1, если элемент не найден.
         */
+        System.out.println(binarySearch(82, arr));
+
+
 
     }
 }
