@@ -80,8 +80,8 @@ public class Main {
     /**
      * Реализовать функцию возведения числа a в степень b без рекурсии;
      *
-     * @param n возводимое число
-     * @param x степень числа
+     * @param a возводимое число
+     * @param b степень числа
      * @return результат
      */
     private static int pow(int a, int b) {
@@ -92,6 +92,36 @@ public class Main {
         }
 
         return result;
+    }
+
+    /**
+     * Реализовать функцию возведения числа a в степень b рекурсивно;
+     *
+     * @param a возводимое число
+     * @param b степень числа
+     * @return результат
+     */
+    private static int recPow(int a, int b) {
+        return recPow(a, b, 0, 1);
+    }
+
+    /**
+     * @param a      возводимое число
+     * @param b      степень числа
+     * @param count  счетчик для подсчета шагов (count < b)
+     * @param result переменная для хранения промежуточного результа, изначально должна быть равна 1
+     * @return результат
+     */
+    private static int recPow(int a, int b, int count, int result) {
+        result *= a;
+        count++;
+
+        if (count < b) {
+            return recPow(a, b, count, result);
+        }
+
+        return result;
+
     }
 
 
@@ -106,7 +136,7 @@ public class Main {
 
         /* 2. Реализовать функцию возведения числа a в степень b:
            b. рекурсивно; */
-
+        System.out.println(recPow(7, 3));
 
     }
 }
