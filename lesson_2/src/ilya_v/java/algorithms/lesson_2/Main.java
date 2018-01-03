@@ -20,9 +20,6 @@ package ilya_v.java.algorithms.lesson_2;
      Со звёздочками выполняйте в том случае, если вы решили задачи без звёздочек.
 */
 
-import java.nio.Buffer;
-import java.util.Arrays;
-
 public class Main {
 
     /*
@@ -80,17 +77,35 @@ public class Main {
     }
 
 
+    /**
+     * Реализовать функцию возведения числа a в степень b без рекурсии;
+     *
+     * @param n возводимое число
+     * @param x степень числа
+     * @return результат
+     */
+    private static int pow(int a, int b) {
+        int result = 1;
+
+        for (int i = 0; i < b; i++) {
+            result *= a;
+        }
+
+        return result;
+    }
+
+
     public static void main(String[] args) {
 
        /* Реализовать функцию перевода из 10 системы в двоичную используя рекурсию */
         System.out.println(convertToBinary(18));
 
         /* 2. Реализовать функцию возведения числа a в степень b:
-           a. без рекурсии;
+           a. без рекурсии; */
+        System.out.println(pow(7, 3));
+
+        /* 2. Реализовать функцию возведения числа a в степень b:
            b. рекурсивно; */
-
-        
-
 
 
     }
