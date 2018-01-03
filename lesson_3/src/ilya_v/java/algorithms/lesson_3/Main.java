@@ -78,47 +78,53 @@ public class Main {
             m = l + ((r - l) / 2);
 
             if ((l <= r) && (arr[m] != searchNumber)) {
-
                 if (arr[m] < searchNumber) {
                     l = m + 1;
                 } else {
                     r = m - 1;
                 }
-
             } else {
-
                 if (arr[m] == searchNumber) {
                     return m;
                 } else {
                     return -1;
                 }
-
             }
         }
     }
 
-    private static int shakerSort(int[] arr){
-        int count = 0;
-
+    private static int[] shakerSort(int[] arr) {
+        //int arr[] = {5, 3, 8, 11, 1, 5, 7, 3, 4, 10};
+        int n = 0;
+        int tmp = 0;
+        int j = 0;
         for (int i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
 
-            if (i % 2 == 0){
-                // на четных итерациях идем справа налево
+                    tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
 
 
-            } else {
-                // на нечетных идем слева направо
+                }
+            }
+            for (j = 0; j < arr.length - 1; j++) {
+                if (arr[(arr.length - 1) - j] < arr[(arr.length - 1) - j - 1]) {
 
+                    tmp = arr[(arr.length - 1) - j];
+                    arr[(arr.length - 1) - j] = arr[(arr.length - 1) - j - 1];
+                    arr[(arr.length - 1) - j - 1] = tmp;
+
+                }
             }
 
         }
 
-
-        return count;
+        return arr;
     }
 
     public static void main(String[] args) {
-
         /*
         1.  Попробовать оптимизировать пузырьковую сортировку.
             Сравнить количество операций сравнения оптимизированной и не оптимизированной программы.
@@ -130,7 +136,6 @@ public class Main {
         int[] newArr = {8, 5, 4, 3, 2, 1, 10, 11, 12, 23, 33, 33, 81, 80, 82, 83, 99};
         System.out.println("count = " + fixCountBubbleSort(newArr) + "; arr = " + Arrays.toString(newArr));
 
-
        /*
         3.  Реализовать бинарный алгоритм поиска в виде функции, которой передается отсортированный массив.
             Функция возвращает индекс найденного элемента или -1, если элемент не найден.
@@ -140,10 +145,8 @@ public class Main {
         /*
         2. *Реализовать шейкерную сортировку.
          */
-
-
-
-
+        int[] newNewArr = {3, 2, 3, 4, 0, 1};
+        System.out.println(Arrays.toString(shakerSort(newNewArr)));
 
     }
 }
